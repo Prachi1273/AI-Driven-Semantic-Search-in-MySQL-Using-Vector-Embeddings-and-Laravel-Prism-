@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    container_name: semantic_demo_app
+    working_dir: /var/www
+    volumes:
+      - ./app:/var/www
+    ports:
+      - "8082:8000"
+    command: php artisan serve --host=0.0.0.0 --port=8000
